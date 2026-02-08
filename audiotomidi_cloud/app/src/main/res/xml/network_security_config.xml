@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- 开发环境配置 -->
+    <debug-overrides>
+        <trust-anchors>
+            <!-- 信任用户添加的 CA 证书 -->
+            <certificates src="user" />
+            <!-- 信任设备默认 CA 证书 -->
+            <certificates src="system" />
+        </trust-anchors>
+    </debug-overrides>
+
+    <!-- 本地服务器配置 -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">192.168.</domain>
+        <domain includeSubdomains="true">10.</domain>
+        <domain includeSubdomains="true">172.</domain>
+        <domain includeSubdomains="true">localhost</domain>
+    </domain-config>
+
+    <!-- 允许自签名证书的特定域 -->
+    <domain-config>
+        <domain includeSubdomains="true">172.25.35.155</domain> <!-- 替换为您的服务器IP -->
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </domain-config>
+</network-security-config>
+

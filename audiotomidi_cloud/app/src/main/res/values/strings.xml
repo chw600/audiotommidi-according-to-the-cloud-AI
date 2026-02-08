@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">音频转MIDI</string>
+    <string name="record_button">录音</string>
+    <string name="select_file">选择文件</string>
+    <string name="upload_button">上传</string>
+    <string name="download_button">下载</string>
+</resources>
